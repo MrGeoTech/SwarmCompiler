@@ -1,0 +1,5 @@
+print("\"One is the number\'");
+
+func void test() {
+    print("Test Function");
+}

@@ -1,0 +1,6 @@
+plugins {
+    id 'java'
+}
+
+group 'net.mrgeotech'
+version '1.0'

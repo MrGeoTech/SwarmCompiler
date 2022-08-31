@@ -1,0 +1,18 @@
+func void main(String[] args) {
+    int i ~ 1;
+
+    if (i = 1) {
+        printLine("\"One is the number\'");
+    }
+}
+
+func Configuration toConfig(String[] args) {
+    for (String arg : args) {
+        if (StringUtils.equalsIgnoreCase(
+    }
+}
+
+data Configuration() {
+    String[] keys;
+    any[] values;
+}
