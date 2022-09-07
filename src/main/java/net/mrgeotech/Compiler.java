@@ -1,12 +1,12 @@
 package net.mrgeotech;
 
 import net.mrgeotech.tokens.Token;
-import net.mrgeotech.tokens.TokenType;
 import net.mrgeotech.tokens.Tokenizer;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 
 public class Compiler {
 
@@ -17,10 +17,10 @@ public class Compiler {
 
             Tokenizer tokenizer = new Tokenizer(code);
 
-            Token next = tokenizer.getNextToken();
-            while (!next.getType().equals(TokenType.EOF)) {
-                System.out.println(next.getType().name() + " " + next.getValue());
-                next = tokenizer.getNextToken();
+            List<Token> tokens = tokenizer.formatTokens(tokenizer.getAllTokens());
+
+            for (Token token : tokens) {
+                System.out.println(token.getType() + " " + token.getValue());
             }
         } catch (IOException e) {
             e.printStackTrace();

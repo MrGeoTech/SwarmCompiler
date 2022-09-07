@@ -50,12 +50,19 @@
 | SB   | `111` | Stores 8-bit value from register to memory                                           |
 
 # Fence Instructions
-| CODE | BYTES  | EFFECT        |
-|------|--------|---------------|
-| PI   | `1xxx` | Device input  |
-| PO   | `x1xx` | Device output |
-| PR   | `xx1x` | Read          |
-| PW   | `xxx1` | Write         |
+| PREDECESSOR | BYTES    | EFFECT          |
+|-------------|----------|-----------------|
+| PI          | `1xxx`   | Device input    |
+| PO          | `x1xx`   | Device output   |
+| PR          | `xx1x`   | Read            |
+| PW          | `xxx1`   | Write           |
+
+| SUCCESSOR   | BYTES    | OUTPUT          |
+|-------------|----------|-----------------|
+| SI          | `1xxx`   | Device input    |
+| SO          | `x1xx`   | Device output   |
+| SR          | `xx1x`   | Read            |
+| SW          | `xxx1`   | Write           |
 
 # Notes
 - Software should be optimized so that the most common branch is sequential.

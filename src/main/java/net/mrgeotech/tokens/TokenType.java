@@ -2,7 +2,8 @@ package net.mrgeotech.tokens;
 
 public enum TokenType {
     NAME,
-    VAR_LITERAL,
+    VAR_LITERAL, // Hardcoded value for variable
+    VAR,
     FUNCTION,
     RIGHT_PAREN,
     LEFT_PAREN,
@@ -11,5 +12,6 @@ public enum TokenType {
     RIGHT_BRACKET,
     LEFT_BRACKET,
     SEMICOLON,
-    COMMA, EOF
+    COMMA,
+    EOF
 }
