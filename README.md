@@ -18,3 +18,7 @@ You don't.
 - Create a compiler for the Lyion programming language that compiles to the ISA with task optimizations
 - Create a physical implementation of the Swarm CPU using an FPGA using the Turning Complete implementation as a reference
 - Look for and implement optimizations for the Swarm CPU and the compiler
+
+## Plans for research with this project
+- Implement an on-the-fly hardware transpiler for single threaded applications to run on all SWARM cores.
+- GOALS: Run Linux on an FPGA with the transpiler and effectively run single-threaded applications on multiple threads
