@@ -36,7 +36,8 @@
 | LOAD   | 12b***i*** ***s***rc ***w***idth ***d***est            | `iiii iiii iiii ssss swww dddd d000 1011` | Loads value from memory to register                                                            |
 | STORE  | 12b***i*** ***s***rc ***b***ase ***w***idth            | `iiii iiii ssss bbbb bwww iiii i010 1011` | Saves value in src to the memory address of base + immediate                                   |
 | FENCE  | ***p***redecessor ***s***uccessor s***r***c ***d***est | `0000 pppp ssss rrrr r000 dddd d110 1011` | Provides sequencing for other hardware threads                                                 |
-
+| FENCEI | 12b***i*** ***s***rc ***d***est                        | `iiii iiii iiii ssss s001 dddd d110 1011` | Provides sequencing for other hardware threads and invalidates the instruction cache           |
+ 
 # Load/Store Instructions
 | CODE | BYTES | EFFECT                                                                               |
 |------|-------|--------------------------------------------------------------------------------------|

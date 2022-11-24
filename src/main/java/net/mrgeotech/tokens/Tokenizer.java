@@ -1,7 +1,5 @@
 package net.mrgeotech.tokens;
 
-import net.mrgeotech.tokens.Token;
-import net.mrgeotech.tokens.TokenType;
 import net.mrgeotech.tokens.specials.Function;
 
 import java.util.ArrayList;
@@ -108,6 +106,7 @@ public class Tokenizer {
         while (!next.getType().equals(TokenType.EOF)) {
             tokens.add(next);
             next = getNextToken();
+            System.out.println(next.toString());
         }
         return tokens;
     }
@@ -213,6 +212,37 @@ public class Tokenizer {
         }
 
         return result;
+    }
+
+    private void formatVariables(List<Token> code) {
+        for (int i = 0; i < code.size(); i++) {
+            if (code.get(i).getType().equals(TokenType.VAR)) {
+                // Getting name
+                Token name = code.get(i - 1);
+                if (!name.getType().equals(TokenType.NAME)) {
+                    System.err.println("Expected variable name!");
+                    return;
+                }
+                // Checking for array
+                int offset = 0;
+                if (code.get(i - 2).getType().equals(TokenType.RIGHT_BRACE)) {
+                    if (!code.get(i - 3).getType().equals(TokenType.LEFT_BRACE)) {
+                        System.err.println("Expected right bracket after left bracket");
+                        return;
+                    }
+                    name.setValue(name.getValue() + "[]");
+                    offset = 2;
+                }
+                // Getting type
+                Token type = code.get(i - 2 - offset);
+                if (!type.getType().equals(TokenType.NAME)) {
+                    System.err.println("Expected variable type!");
+                    return;
+                }
+                // Getting value
+                Token value = code.get(i + 1);
+            }
+        }
     }
 
 }

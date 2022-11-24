@@ -20,7 +20,7 @@ public class Compiler {
             List<Token> tokens = tokenizer.formatTokens(tokenizer.getAllTokens());
 
             for (Token token : tokens) {
-                System.out.println(token.getType() + " " + token.getValue());
+                System.out.println(token.toString());
             }
         } catch (IOException e) {
             e.printStackTrace();
